@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bdl371v2bcqfg"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c3173xobuqgl6"]
 
 [ext_resource type="Texture2D" uid="uid://1srtdfmm5q7a" path="res://Resources/tilemap.png" id="1_2fup7"]
 
@@ -98,7 +98,7 @@ texture = ExtResource("1_2fup7")
 
 [resource]
 occlusion_layer_0/light_mask = 3
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
