@@ -6,6 +6,8 @@ var has_key: bool = false
 var dashing: bool = false
 var motion_vector
 var can_dash: bool = true
+var is_over_abyss: bool = false
+var dash_starting_pos: Vector2
 
 func _ready():
 	var key = get_tree().get_nodes_in_group("key")
@@ -14,7 +16,10 @@ func _ready():
 	else:
 		print("No key in the scene")
 
-func _physics_process(delta):
+func _physics_process(_delta):
+	if not dashing and is_over_abyss:
+		position = dash_starting_pos
+		take_damage()
 	if Input.is_action_just_pressed("dash") and not dashing and can_dash:
 		dash()
 	if not dashing:
@@ -23,9 +28,11 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_v = true
 	else:
 		$AnimatedSprite2D.flip_v = false
-	move_and_collide(motion_vector * delta)
+	velocity = motion_vector
+	move_and_slide()
 
 func dash():
+	dash_starting_pos = position
 	dashing = true
 	make_invincible()
 	motion_vector = Input.get_vector("left", "right", "up", "down")  * dash_speed
@@ -45,3 +52,6 @@ func _on_dash_cooldown_timer_timeout():
 func _on_dash_timer_timeout():
 	dashing = false
 	set_collision_mask_value(3, true)
+
+func take_damage():
+	dashing = false
