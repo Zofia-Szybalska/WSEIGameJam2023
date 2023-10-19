@@ -102,3 +102,4 @@ scale = Vector2(-2, 2)
 position = Vector2(16, 24)
 
 [node name="Cannon" parent="." instance=ExtResource("9_04hbg")]
+direction = 2
