@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 150
+@export var dash_speed = 1000
 var has_key: bool = false
 var dashing: bool = false
 var motion_vector
@@ -27,8 +28,7 @@ func _physics_process(delta):
 func dash():
 	dashing = true
 	make_invincible()
-	motion_vector = Input.get_vector("left", "right", "up", "down")  * speed * 5
-	print("Dash")
+	motion_vector = Input.get_vector("left", "right", "up", "down")  * dash_speed
 	$DashTimer.start()
 	can_dash = false
 	$DashCooldownTimer.start()

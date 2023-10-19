@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bflyhx6op2rkn"]
+[gd_scene load_steps=6 format=3 uid="uid://bflyhx6op2rkn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jsd0q"]
+[ext_resource type="PackedScene" path="res://Objects/player_camera.tscn" id="2_d4mhy"]
 [ext_resource type="Texture2D" uid="uid://bsql628l4revp" path="res://icon.svg" id="2_jx6pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrhnc"]
@@ -31,6 +32,8 @@ motion_mode = 1
 platform_wall_layers = 128
 script = ExtResource("1_jsd0q")
 
+[node name="Camera2D" parent="." instance=ExtResource("2_d4mhy")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hrhnc")
 
@@ -44,7 +47,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="DashTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.05
 one_shot = true
 
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
