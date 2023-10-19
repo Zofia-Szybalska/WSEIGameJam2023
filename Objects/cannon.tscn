@@ -24,7 +24,6 @@ texture = ExtResource("2_57f4p")
 position = Vector2(0, 340)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_spgqn")
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
