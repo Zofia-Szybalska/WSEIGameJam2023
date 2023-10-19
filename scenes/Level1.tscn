@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi5nuow1qr78l"]
+[gd_scene load_steps=13 format=3 uid="uid://bi5nuow1qr78l"]
 
 [ext_resource type="TileSet" uid="uid://bdl371v2bcqfg" path="res://Resources/Level1TileSet.tres" id="1_l7i65"]
 [ext_resource type="Texture2D" uid="uid://csk8srrhgjqd7" path="res://Resources/Key.png" id="2_qqkk2"]
 [ext_resource type="Texture2D" uid="uid://dwll4hw4ro0id" path="res://Resources/Door.png" id="3_xnui1"]
 [ext_resource type="Texture2D" uid="uid://mtx8am06k63s" path="res://Resources/Pedestal.png" id="4_6sb5m"]
-[ext_resource type="Texture2D" uid="uid://bytamm0oyvsbi" path="res://Resources/RedGem.png" id="5_rt2h8"]
 [ext_resource type="PackedScene" uid="uid://di1t850sccdgb" path="res://scenes/key.tscn" id="6_oatmi"]
 [ext_resource type="PackedScene" uid="uid://4o68b1ifhego" path="res://Objects/doors.tscn" id="7_t8s17"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="8_7ct81"]
-[ext_resource type="PackedScene" uid="uid://b82cas3y5c1qx" path="res://Objects/cannon.tscn" id="9_04hbg"]
+[ext_resource type="PackedScene" uid="uid://bmmwc0h1jxgpn" path="res://Objects/red_gem.tscn" id="8_t665s"]
 
 [sub_resource type="Gradient" id="Gradient_s7yu7"]
 colors = PackedColorArray(0, 0, 0, 1, 0.989844, 5.48691e-06, 9.62615e-07, 1)
@@ -81,12 +80,6 @@ texture_filter = 1
 position = Vector2(239.602, -44.7953)
 texture = ExtResource("4_6sb5m")
 
-[node name="RedGem" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(239.602, -52.7953)
-scale = Vector2(0.268816, 0.256396)
-texture = ExtResource("5_rt2h8")
-
 [node name="Key2" parent="." instance=ExtResource("6_oatmi")]
 position = Vector2(-175, 25)
 
@@ -101,5 +94,5 @@ scale = Vector2(-2, 2)
 [node name="Player" parent="." instance=ExtResource("8_7ct81")]
 position = Vector2(16, 24)
 
-[node name="Cannon" parent="." instance=ExtResource("9_04hbg")]
-direction = 2
+[node name="RedGem2" parent="." instance=ExtResource("8_t665s")]
+position = Vector2(240, -53)
