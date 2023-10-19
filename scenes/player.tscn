@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://bflyhx6op2rkn"]
+[gd_scene load_steps=4 format=3 uid="uid://bflyhx6op2rkn"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_jsd0q"]
+[ext_resource type="Texture2D" uid="uid://bsql628l4revp" path="res://icon.svg" id="2_jx6pn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wapv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jx6pn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jx6pn")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_jsd0q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3wapv")
+animation = &"idle"
