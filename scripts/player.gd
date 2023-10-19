@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 150
+@export var speed = 100
 @export var dash_speed = 1000
 var has_key: bool = false
 var dashing: bool = false

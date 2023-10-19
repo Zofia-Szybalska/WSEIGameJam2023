@@ -13,4 +13,5 @@ func _process(_delta):
 func _on_area_2d_body_entered(body):
 	if body.has_key:
 		$DoorLockedCollision.set_deferred("disabled", true)
-		
+		$DoorLeft.rotation_degrees = 120
+		$DoorRight.rotation_degrees = -120
