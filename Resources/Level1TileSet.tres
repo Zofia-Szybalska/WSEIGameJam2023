@@ -1,0 +1,106 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bdl371v2bcqfg"]
+
+[ext_resource type="Texture2D" uid="uid://1srtdfmm5q7a" path="res://Resources/tilemap.png" id="1_2fup7"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ultot"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fm32k"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnsgg"]
+texture = ExtResource("1_2fup7")
+0:0/0 = 0
+0:0/0/z_index = -1
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ultot")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/next_alternative_id = 4
+1:0/0 = 0
+1:0/0/z_index = 1
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_fm32k")
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.08233, -8, -4.90555, 8, -8, 8)
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/1/transpose = true
+1:0/1/z_index = 1
+1:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/1/physics_layer_0/angular_velocity = 0.0
+1:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.03125, -8, -5)
+1:0/2 = 2
+1:0/2/flip_v = true
+1:0/2/transpose = true
+1:0/2/z_index = 1
+1:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/2/physics_layer_0/angular_velocity = 0.0
+1:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5, 8, 5, 8, 8, -8, 8)
+1:0/3 = 3
+1:0/3/flip_h = true
+1:0/3/z_index = 1
+1:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/3/physics_layer_0/angular_velocity = 0.0
+1:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(4.99394, -8, 8, -8, 8, 8, 4.99394, 8)
+2:0/next_alternative_id = 6
+2:0/0 = 0
+2:0/0/z_index = 1
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.03125, -5.01563, -4.96875, -5.01563, 8, -8, 8)
+2:0/2 = 2
+2:0/2/flip_h = true
+2:0/2/z_index = 1
+2:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/2/physics_layer_0/angular_velocity = 0.0
+2:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.01131, -8, -8, 8, -8, 8, 8, 5.01604, 8, 5.01604, -5.03814)
+2:0/3 = 3
+2:0/3/flip_h = true
+2:0/3/flip_v = true
+2:0/3/z_index = 1
+2:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/3/physics_layer_0/angular_velocity = 0.0
+2:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(4.99783, 5.03504, 4.99783, -8, 8, -8, 8, 8, -8, 8, -8, 5)
+2:0/1 = 1
+2:0/1/flip_v = true
+2:0/1/z_index = 1
+2:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/1/physics_layer_0/angular_velocity = 0.0
+2:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.03354, -8, -4.99846, 5.016, 8, 5.05984, 8, 8, -8, 8)
+3:0/next_alternative_id = 4
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/1 = 1
+3:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/1/physics_layer_0/angular_velocity = 0.0
+0:1/next_alternative_id = 3
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/1 = 1
+0:1/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/1/physics_layer_0/angular_velocity = 0.0
+0:1/2 = 2
+0:1/2/flip_h = true
+0:1/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/2/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+occlusion_layer_0/light_mask = 3
+physics_layer_0/collision_layer = 3
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_dnsgg")
