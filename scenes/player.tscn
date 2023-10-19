@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bflyhx6op2rkn"]
+[gd_scene load_steps=5 format=3 uid="uid://bflyhx6op2rkn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jsd0q"]
 [ext_resource type="Texture2D" uid="uid://bsql628l4revp" path="res://icon.svg" id="2_jx6pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrhnc"]
+size = Vector2(128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3wapv"]
 animations = [{
@@ -22,9 +25,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_jsd0q")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_hrhnc")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -64)
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_3wapv")
 animation = &"idle"
