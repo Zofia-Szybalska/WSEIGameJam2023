@@ -25,10 +25,14 @@ func _physics_process(_delta):
 	if not dashing:
 		motion_vector = Input.get_vector("left", "right", "up", "down")  * speed
 	if motion_vector.x < 0:
-		$AnimatedSprite2D.flip_v = true
-	else:
-		$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_h = true
+	elif motion_vector.x > 0:
+		$AnimatedSprite2D.flip_h = false
 	velocity = motion_vector
+	if velocity == Vector2(0,0):
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("walking")
 	move_and_slide()
 
 func dash():
