@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://fna0mgo72jxd"]
+
+[ext_resource type="Script" path="res://scripts/abyss.gd" id="1_g7xq4"]
+[ext_resource type="Texture2D" uid="uid://b8psglty4rebm" path="res://Resources/MainTile.png" id="2_mgc15"]
+
+[node name="abyss" type="Area2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_g7xq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mgc15")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
