@@ -59,4 +59,4 @@ func _on_dash_timer_timeout():
 
 func take_damage():
 	dashing = false
-	print("Player hurt")
+	print("Player was hurt")
