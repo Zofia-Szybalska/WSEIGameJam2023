@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://vf704yv47hpd"]
+
+[ext_resource type="Texture2D" uid="uid://3ovcmrxhucsg" path="res://Resources/goodduck.png" id="1_15dys"]
+[ext_resource type="Script" path="res://scripts/good_duck.gd" id="1_b8ry4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtayj"]
+atlas = ExtResource("1_15dys")
+region = Rect2(0, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lukxw"]
+atlas = ExtResource("1_15dys")
+region = Rect2(100, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46m8r"]
+atlas = ExtResource("1_15dys")
+region = Rect2(200, 0, 100, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as4st"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtayj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lukxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46m8r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GoodDuck" type="Node2D"]
+script = ExtResource("1_b8ry4")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_as4st")
+frame = 2
+frame_progress = 0.121626
