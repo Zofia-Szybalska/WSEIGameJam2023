@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjv0rcnskl5jv"]
 
-[ext_resource type="Script" path="res://scripts/red_gem.gd" id="1_thpki"]
-[ext_resource type="Texture2D" uid="uid://bytamm0oyvsbi" path="res://Resources/RedGem.png" id="2_bdh6o"]
+[ext_resource type="Script" path="res://scripts/blue_gem.gd" id="1_j0sg1"]
+[ext_resource type="Texture2D" uid="uid://b4on626d1ustg" path="res://Resources/gemBlue.png" id="2_p05qp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28m3p"]
 size = Vector2(10, 8)
 
-[node name="RedGem" type="Area2D"]
-script = ExtResource("1_thpki")
+[node name="BlueGem" type="Area2D"]
+script = ExtResource("1_j0sg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
@@ -17,6 +17,6 @@ shape = SubResource("RectangleShape2D_28m3p")
 [node name="RedGem" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.268816, 0.256396)
-texture = ExtResource("2_bdh6o")
+texture = ExtResource("2_p05qp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

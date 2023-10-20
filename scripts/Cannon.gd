@@ -9,6 +9,11 @@ var direction_vec: Vector2 = Vector2(0,1)
 var bullet_pos = Vector2(-360,0)
 
 
+func appear():
+	show()
+	$ShotTimer.start()
+	$CollisionShape2D.set_deferred("disabled", false)
+
 func _ready():
 	match direction:
 		directions.DOWN:

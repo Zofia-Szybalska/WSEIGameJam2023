@@ -7,15 +7,14 @@
 radius = 180.0
 height = 520.0
 
-[node name="Cannon" type="StaticBody2D"]
-scale = Vector2(0.05, 0.05)
+[node name="Cannon" type="StaticBody2D" groups=["cannon"]]
+scale = Vector2(0.03, 0.03)
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_bfyve")
 direction = 1
 
 [node name="ShotTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_57f4p")
@@ -25,5 +24,6 @@ position = Vector2(0, 340)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_spgqn")
+disabled = true
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
