@@ -59,3 +59,4 @@ dash={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.533333, 0, 1, 1)

@@ -286,7 +286,7 @@ position = Vector2(48, -272)
 direction = 3
 
 [node name="Player" parent="." instance=ExtResource("2_rl5kl")]
-position = Vector2(-68, -469)
+position = Vector2(-67, -469)
 texture = ExtResource("3_p5g6l")
 sprite_scale = Vector2(1, 1)
 zoom_scale = 0.5
