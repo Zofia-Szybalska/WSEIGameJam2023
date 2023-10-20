@@ -1,4 +1,5 @@
 [gd_scene load_steps=21 format=3 uid="uid://cr2oi0jtq510d"]
+[gd_scene load_steps=23 format=3 uid="uid://cr2oi0jtq510d"]
 
 [ext_resource type="Texture2D" uid="uid://ck63524ivumqy" path="res://Resources/tilemap2.png" id="1_v2bsi"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="2_rl5kl"]
@@ -7,15 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://bh5dna8ccx555" path="res://Objects/glitched_wall_width_3.tscn" id="5_dsbvy"]
 [ext_resource type="PackedScene" uid="uid://cu5f3qayspshs" path="res://Objects/green_gem.tscn" id="6_l42lx"]
 [ext_resource type="PackedScene" uid="uid://bjv0rcnskl5jv" path="res://Objects/blue_gem.tscn" id="7_qcjvv"]
+[ext_resource type="AudioStream" uid="uid://bfc06bph2hvqj" path="res://SFX/PowerUp.wav" id="7_r1ibx"]
 [ext_resource type="PackedScene" uid="uid://b1tdvw53dnsju" path="res://Objects/glitched_wall_width_2.tscn" id="9_c3ovd"]
 [ext_resource type="PackedScene" uid="uid://b82cas3y5c1qx" path="res://Objects/cannon.tscn" id="10_0o3uw"]
 [ext_resource type="Texture2D" uid="uid://nbc3lof65elj" path="res://Resources/Exit.png" id="11_4rxx8"]
 [ext_resource type="PackedScene" uid="uid://bdg78dmhay10" path="res://Objects/glitched_wall_width_1.tscn" id="11_4slv3"]
+[ext_resource type="PackedScene" uid="uid://bdwh0he7r1asr" path="res://UI/machine_outline.tscn" id="11_djdy1"]
 [ext_resource type="Texture2D" uid="uid://b4on626d1ustg" path="res://Resources/gemBlue.png" id="12_ehhu2"]
 [ext_resource type="Texture2D" uid="uid://bpbmc6cljcs2q" path="res://Resources/gemGreen.png" id="13_7yxj8"]
 [ext_resource type="Texture2D" uid="uid://bytamm0oyvsbi" path="res://Resources/RedGem.png" id="14_nd0r5"]
 [ext_resource type="PackedScene" uid="uid://vf704yv47hpd" path="res://Objects/good_duck.tscn" id="15_51cq4"]
 [ext_resource type="PackedScene" uid="uid://dab6p06cm0e5n" path="res://Objects/evil_duck.tscn" id="16_fll5i"]
+[ext_resource type="AudioStream" uid="uid://dob8bbdtk72t7" path="res://SFX/Level2.mp3" id="16_yxa6y"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0p0do"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 1, 0, 0, 65537, 0, 0)
@@ -252,6 +256,9 @@ position = Vector2(216, -168)
 [node name="BlueGem" parent="." instance=ExtResource("7_qcjvv")]
 position = Vector2(-184, -504)
 
+[node name="Pickup" type="AudioStreamPlayer2D" parent="BlueGem"]
+stream = ExtResource("7_r1ibx")
+
 [node name="Cannons" type="Node2D" parent="."]
 
 [node name="Cannon2" parent="Cannons" instance=ExtResource("10_0o3uw")]
@@ -280,9 +287,10 @@ position = Vector2(48, -272)
 direction = 3
 
 [node name="Player" parent="." instance=ExtResource("2_rl5kl")]
-position = Vector2(-72, -472)
+position = Vector2(-82, -440)
 texture = ExtResource("3_p5g6l")
 sprite_scale = Vector2(1, 1)
+zoom_scale = 0.5
 metadata/_edit_group_ = true
 
 [node name="abyss" parent="Player" instance=ExtResource("3_vusxt")]
@@ -316,7 +324,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("14_nd0r5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_epef5")
 
 [node name="GoodDuck" parent="." instance=ExtResource("15_51cq4")]
@@ -326,3 +333,14 @@ position = Vector2(-168, -520)
 z_index = 100
 position = Vector2(216, -120)
 scale = Vector2(0.2, 0.2)
+[node name="Background music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_yxa6y")
+autoplay = true
+
+[node name="Cannon" parent="." instance=ExtResource("10_0o3uw")]
+position = Vector2(-32, -256)
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("11_djdy1")]
+position = Vector2(-114, 1004)
+scale_v = 0.43
+lvl = 0

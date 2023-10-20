@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdwh0he7r1asr"]
+
+[ext_resource type="Texture2D" uid="uid://bgysq38j8pxl4" path="res://Resources/Machine1.png" id="1_spgrx"]
+[ext_resource type="Texture2D" uid="uid://bgcvhhcxbebot" path="res://Resources/Machine2.png" id="2_ofllc"]
+[ext_resource type="Texture2D" uid="uid://qw55h46ajlcq" path="res://Resources/Machine3.png" id="3_ctpai"]
+[ext_resource type="Script" path="res://UI/machine_outline.gd" id="4_c8h4b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0eph2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_spgrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ofllc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ctpai")
+}],
+"loop": false,
+"name": &"Machine1",
+"speed": 0.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_0eph2")
+animation = &"Machine1"
+script = ExtResource("4_c8h4b")
+lvl = 2
