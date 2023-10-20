@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cr2oi0jtq510d"]
+[gd_scene load_steps=17 format=3 uid="uid://cr2oi0jtq510d"]
 
 [ext_resource type="Texture2D" uid="uid://ck63524ivumqy" path="res://Resources/tilemap2.png" id="1_v2bsi"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_1hgg8"]
 [ext_resource type="PackedScene" path="res://Objects/player_camera.tscn" id="3_uxj4m"]
 [ext_resource type="Texture2D" uid="uid://cxga27axwxfoc" path="res://Resources/character2walk.png" id="4_ce62d"]
+[ext_resource type="PackedScene" uid="uid://uvwdotsq0gik" path="res://Objects/glitched_wall.tscn" id="5_yxyvm"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0p0do"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 1, 0, 0, 65537, 0, 0)
@@ -188,6 +189,9 @@ one_shot = true
 [node name="DashTimer" type="Timer" parent="Player"]
 wait_time = 0.05
 one_shot = true
+
+[node name="GlitchedWall" parent="." instance=ExtResource("5_yxyvm")]
+position = Vector2(-96, -98)
 
 [connection signal="timeout" from="Player/DashCooldownTimer" to="Player" method="_on_dash_cooldown_timer_timeout" flags=18]
 [connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_dash_timer_timeout" flags=18]
