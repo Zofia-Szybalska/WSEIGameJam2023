@@ -9,11 +9,13 @@ func play_sprites():
 	var sprites = $Sprites.get_children()
 	for sprite in sprites:
 		sprite.play("default")
-
-func _on_area_2d_body_entered(body):
-	if body is CharacterBody2D:
+		
+func _physics_process(_delta):
+#func _on_area_2d_body_entered(body):
+	if $Area2D.get_overlapping_bodies():
+		var body = $Area2D.get_overlapping_bodies()[0]
 		if body.dashing:
-			body.g_wall_area_c += 1
+			body.g_wall_area_c = 1
 			set_collision_layer_value(8, false)
 			body.get_node(str(body.get_path()) + "/DashTimer").stop()
 

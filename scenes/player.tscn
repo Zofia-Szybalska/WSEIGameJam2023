@@ -12,7 +12,6 @@ height = 144.0
 
 [sub_resource type="Animation" id="Animation_ajg7d"]
 resource_name = "Falling"
-loop_mode = 2
 step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -115,6 +114,7 @@ libraries = {
 
 [node name="Dash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3scwh")
+volume_db = -7.0
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_yhu81")

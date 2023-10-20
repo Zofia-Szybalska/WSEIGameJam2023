@@ -286,7 +286,7 @@ position = Vector2(48, -272)
 direction = 3
 
 [node name="Player" parent="." instance=ExtResource("2_rl5kl")]
-position = Vector2(-82, -440)
+position = Vector2(-68, -469)
 texture = ExtResource("3_p5g6l")
 sprite_scale = Vector2(1, 1)
 zoom_scale = 0.5
@@ -305,17 +305,17 @@ collision_layer = 2
 position = Vector2(-0.000244141, -0.00012207)
 texture = ExtResource("11_4rxx8")
 
-[node name="BlueGem" type="Sprite2D" parent="Exit" groups=["blue_gem"]]
-visible = false
-position = Vector2(0, -230)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_ehhu2")
-
 [node name="GreenGem" type="Sprite2D" parent="Exit" groups=["green_gem"]]
 visible = false
 position = Vector2(150, 40)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_7yxj8")
+
+[node name="BlueGem" type="Sprite2D" parent="Exit" groups=["blue_gem"]]
+visible = false
+position = Vector2(0, -230)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_ehhu2")
 
 [node name="RedGem" type="Sprite2D" parent="Exit"]
 position = Vector2(-150, 40)
@@ -340,7 +340,7 @@ autoplay = true
 [node name="Cannon" parent="." instance=ExtResource("10_0o3uw")]
 position = Vector2(-32, -256)
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("11_djdy1")]
+[node name="Arcade" parent="." instance=ExtResource("11_djdy1")]
 position = Vector2(-114, 1004)
 scale_v = 0.43
 lvl = 0

@@ -7,7 +7,7 @@ enum directions {UP,DOWN,LEFT,RIGHT}
 var direction_vec: Vector2 = Vector2(0,1)
 @onready var bullet = preload("res://Objects/bullet.tscn")
 var bullet_pos = Vector2(-360,0)
-
+var player
 
 func appear():
 	show()
@@ -15,6 +15,7 @@ func appear():
 	$CollisionShape2D.set_deferred("disabled", false)
 
 func _ready():
+	player = get_tree().get_root().get_child(0).find_child("Player")
 	match direction:
 		directions.DOWN:
 			direction_vec = Vector2(0,1)
@@ -32,5 +33,5 @@ func _on_shot_timer_timeout():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.linear_velocity = direction_vec * bullet_speed
 	bullet_instance.position = $Marker2D.position
-	$Shot.play()
+	$Shot.play(position.distance_to(player.position))
 	add_child(bullet_instance)

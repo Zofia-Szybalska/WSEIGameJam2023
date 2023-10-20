@@ -23,5 +23,4 @@ sprite_frames = ExtResource("2_ghcch")
 
 [node name="Sprites@AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprites" index="1"]
 position = Vector2(64, 0)
-scale = Vector2(1, 1)
 sprite_frames = ExtResource("2_ghcch")
