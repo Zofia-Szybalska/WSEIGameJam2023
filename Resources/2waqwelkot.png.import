@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://c21wv74yy7sel"
-=======
-uid="uid://34n3gdvh8qri"
->>>>>>> origin/main
-path="res://.godot/imported/wallGlitch.png-cf4934efae87f65b307adcd060110bde.ctex"
+uid="uid://dnku1os8tp738"
+path="res://.godot/imported/2waqwelkot.png-2c279ebe4bbf303db309470319ed5cef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/wallGlitch.png"
-dest_files=["res://.godot/imported/wallGlitch.png-cf4934efae87f65b307adcd060110bde.ctex"]
+source_file="res://Resources/2waqwelkot.png"
+dest_files=["res://.godot/imported/2waqwelkot.png-2c279ebe4bbf303db309470319ed5cef.ctex"]
 
 [params]
 
