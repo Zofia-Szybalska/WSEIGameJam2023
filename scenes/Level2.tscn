@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr2oi0jtq510d"]
+[gd_scene load_steps=21 format=3 uid="uid://cr2oi0jtq510d"]
 
 [ext_resource type="Texture2D" uid="uid://ck63524ivumqy" path="res://Resources/tilemap2.png" id="1_v2bsi"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="2_rl5kl"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bpbmc6cljcs2q" path="res://Resources/gemGreen.png" id="13_7yxj8"]
 [ext_resource type="Texture2D" uid="uid://bytamm0oyvsbi" path="res://Resources/RedGem.png" id="14_nd0r5"]
 [ext_resource type="PackedScene" uid="uid://vf704yv47hpd" path="res://Objects/good_duck.tscn" id="15_51cq4"]
+[ext_resource type="PackedScene" uid="uid://dab6p06cm0e5n" path="res://Objects/evil_duck.tscn" id="16_fll5i"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0p0do"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 1, 0, 0, 65537, 0, 0)
@@ -320,3 +321,8 @@ shape = SubResource("CircleShape2D_epef5")
 
 [node name="GoodDuck" parent="." instance=ExtResource("15_51cq4")]
 position = Vector2(-168, -520)
+
+[node name="EvilDuck" parent="." instance=ExtResource("16_fll5i")]
+z_index = 100
+position = Vector2(216, -120)
+scale = Vector2(0.2, 0.2)

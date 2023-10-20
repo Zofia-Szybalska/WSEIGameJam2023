@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dab6p06cm0e5n"]
+[gd_scene load_steps=9 format=3 uid="uid://dab6p06cm0e5n"]
 
 [ext_resource type="Script" path="res://scripts/evil_duck.gd" id="1_cehi1"]
 [ext_resource type="Texture2D" uid="uid://dv2wpqlyyubkl" path="res://Resources/evilDuck.png" id="1_xd8wy"]
+[ext_resource type="AudioStream" uid="uid://it04vkn4djqs" path="res://SFX/Ending .wav" id="3_axvt8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pp2rg"]
 atlas = ExtResource("1_xd8wy")
@@ -36,6 +37,7 @@ animations = [{
 radius = 300.0
 
 [node name="EvilDuck" type="Node2D" groups=["evil_duck"]]
+visible = false
 script = ExtResource("1_cehi1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -46,5 +48,13 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_j5lcd")
+disabled = true
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_axvt8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
