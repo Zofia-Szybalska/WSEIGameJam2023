@@ -58,7 +58,7 @@ func _physics_process(_delta):
 
 func dash():
 	#dash_starting_pos = position
-#	$Dash.play()
+	$Dash.play()
 	dashing = true
 	make_invincible()
 	dash_dir_vel = move(dash_speed)
@@ -87,6 +87,7 @@ func take_damage():
 	#dash_speed_tmp = dash_speed
 	dash_speed = 0
 	$AnimationPlayer.play("Falling")
+	$Death.play()
 	
 
 func move(vel):
