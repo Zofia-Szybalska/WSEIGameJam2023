@@ -1,5 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cr2oi0jtq510d"]
-[gd_scene load_steps=23 format=3 uid="uid://cr2oi0jtq510d"]
+[gd_scene load_steps=24 format=3 uid="uid://cr2oi0jtq510d"]
 
 [ext_resource type="Texture2D" uid="uid://ck63524ivumqy" path="res://Resources/tilemap2.png" id="1_v2bsi"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="2_rl5kl"]
@@ -333,6 +332,7 @@ position = Vector2(-168, -520)
 z_index = 100
 position = Vector2(216, -120)
 scale = Vector2(0.2, 0.2)
+
 [node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_yxa6y")
 autoplay = true
