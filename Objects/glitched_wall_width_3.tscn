@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh5dna8ccx555"]
+
+[ext_resource type="PackedScene" uid="uid://uvwdotsq0gik" path="res://Objects/glitched_wall.tscn" id="1_fx7n0"]
+[ext_resource type="SpriteFrames" uid="uid://37av0o58fxsm" path="res://Resources/glitched_wall_sprite_frames.tres" id="2_ghcch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsaju"]
+size = Vector2(192, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrdbe"]
+size = Vector2(198, 70)
+
+[node name="GlitchedWall" instance=ExtResource("1_fx7n0")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_dsaju")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_rrdbe")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprites" index="0"]
+position = Vector2(64, 0)
+sprite_frames = ExtResource("2_ghcch")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprites" index="1"]
+position = Vector2(-64, 0)
+sprite_frames = ExtResource("2_ghcch")
+
+[node name="AnimatedSprite2D" parent="Sprites" index="2"]
+sprite_frames = ExtResource("2_ghcch")
