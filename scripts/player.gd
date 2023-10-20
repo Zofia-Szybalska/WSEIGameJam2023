@@ -45,6 +45,7 @@ func _physics_process(_delta):
 
 func dash():
 	#dash_starting_pos = position
+	$Dash.play()
 	dashing = true
 	make_invincible()
 	dash_dir_vel = move(dash_speed)
