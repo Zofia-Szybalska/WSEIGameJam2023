@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cr2oi0jtq510d"]
+[gd_scene load_steps=22 format=3 uid="uid://cr2oi0jtq510d"]
 
 [ext_resource type="Texture2D" uid="uid://ck63524ivumqy" path="res://Resources/tilemap2.png" id="1_v2bsi"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="2_rl5kl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bh5dna8ccx555" path="res://Objects/glitched_wall_width_3.tscn" id="5_dsbvy"]
 [ext_resource type="PackedScene" uid="uid://cu5f3qayspshs" path="res://Objects/green_gem.tscn" id="6_l42lx"]
 [ext_resource type="PackedScene" uid="uid://bjv0rcnskl5jv" path="res://Objects/blue_gem.tscn" id="7_qcjvv"]
+[ext_resource type="AudioStream" uid="uid://bfc06bph2hvqj" path="res://SFX/PowerUp.wav" id="7_r1ibx"]
 [ext_resource type="PackedScene" uid="uid://b1tdvw53dnsju" path="res://Objects/glitched_wall_width_2.tscn" id="9_c3ovd"]
 [ext_resource type="PackedScene" uid="uid://b82cas3y5c1qx" path="res://Objects/cannon.tscn" id="10_0o3uw"]
 [ext_resource type="Texture2D" uid="uid://nbc3lof65elj" path="res://Resources/Exit.png" id="11_4rxx8"]
@@ -251,6 +252,9 @@ position = Vector2(216, -168)
 
 [node name="BlueGem" parent="." instance=ExtResource("7_qcjvv")]
 position = Vector2(-184, -504)
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="BlueGem"]
+stream = ExtResource("7_r1ibx")
 
 [node name="Cannons" type="Node2D" parent="."]
 
