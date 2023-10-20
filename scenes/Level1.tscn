@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4o68b1ifhego" path="res://Objects/doors.tscn" id="7_t8s17"]
 [ext_resource type="AudioStream" uid="uid://c6dka5bwuvbov" path="res://SFX/Level1.mp3" id="8_0hint"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="8_7ct81"]
-[ext_resource type="PackedScene" path="res://Objects/red_gem.tscn" id="8_t665s"]
+[ext_resource type="PackedScene" uid="uid://bmmwc0h1jxgpn" path="res://Objects/red_gem.tscn" id="8_t665s"]
 [ext_resource type="AudioStream" uid="uid://cbauykn8in4hu" path="res://SFX/Dash.wav" id="9_4br8h"]
 [ext_resource type="AudioStream" uid="uid://bfc06bph2hvqj" path="res://SFX/PowerUp.wav" id="9_ykkv2"]
 
