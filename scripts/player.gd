@@ -1,9 +1,14 @@
+#@tool
 extends CharacterBody2D
 
 @export var speed = 100
 @export var dash_speed = 400
 @export var texture = Resource
 @export var sprite_scale = Vector2(1,1)
+@export var zoom_scale = 0.7
+
+var spawnpoint: Vector2
+
 var has_key: bool = false
 var dashing: bool = false
 var motion_vector
@@ -13,7 +18,13 @@ var dash_starting_pos: Vector2
 var dash_dir_vel: Vector2
 var g_wall_area_c = 0
 
+var speed_tmp = speed
+var dash_speed_tmp = dash_speed
+
+#func _process(_delta):
 func _ready():
+	spawnpoint = position
+	$Camera2D.zoom_scale = zoom_scale
 	$AnimatedSprite2D.sprite_frames = texture
 	$AnimatedSprite2D.scale = sprite_scale
 	var key = get_tree().get_nodes_in_group("key")
@@ -23,6 +34,8 @@ func _ready():
 		print("No key in the scene")
 
 func _physics_process(_delta):
+	#print(position)
+	
 	if not dashing and is_over_abyss:
 		#position = dash_starting_pos
 		take_damage()
@@ -69,9 +82,22 @@ func _on_dash_timer_timeout():
 	set_collision_mask_value(5, true)
 
 func take_damage():
+	#speed_tmp = speed
 	speed = 0
+	#dash_speed_tmp = dash_speed
 	dash_speed = 0
 	$AnimationPlayer.play("Falling")
+	
 
 func move(vel):
 	return Input.get_vector("left", "right", "up", "down")  * vel
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Falling":
+		is_over_abyss = false
+		position = spawnpoint
+		$AnimationPlayer.play_backwards("Raising")
+	else:
+		speed = speed_tmp
+		dash_speed = dash_speed_tmp

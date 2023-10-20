@@ -1,13 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://bi5nuow1qr78l"]
+=======
+[gd_scene load_steps=14 format=3 uid="uid://bi5nuow1qr78l"]
+>>>>>>> Stashed changes
 
 [ext_resource type="TileSet" uid="uid://bdl371v2bcqfg" path="res://Resources/Level1TileSet.tres" id="1_l7i65"]
 [ext_resource type="Texture2D" uid="uid://csk8srrhgjqd7" path="res://Resources/Key.png" id="2_qqkk2"]
 [ext_resource type="Texture2D" uid="uid://mtx8am06k63s" path="res://Resources/Pedestal.png" id="4_6sb5m"]
 [ext_resource type="AudioStream" uid="uid://bnls8vt1p4xkv" path="res://SFX/Key.wav" id="5_xrt80"]
 [ext_resource type="PackedScene" uid="uid://di1t850sccdgb" path="res://scenes/key.tscn" id="6_oatmi"]
+[ext_resource type="SpriteFrames" uid="uid://b3ewaxqbxmp6q" path="res://Resources/player_lvl1.tres" id="7_qfqo2"]
 [ext_resource type="PackedScene" uid="uid://4o68b1ifhego" path="res://Objects/doors.tscn" id="7_t8s17"]
 [ext_resource type="AudioStream" uid="uid://c6dka5bwuvbov" path="res://SFX/Level1.mp3" id="8_0hint"]
 [ext_resource type="PackedScene" uid="uid://bflyhx6op2rkn" path="res://scenes/player.tscn" id="8_7ct81"]
+[ext_resource type="PackedScene" uid="uid://bdwh0he7r1asr" path="res://UI/machine_outline.tscn" id="8_fi64s"]
 [ext_resource type="PackedScene" uid="uid://bmmwc0h1jxgpn" path="res://Objects/red_gem.tscn" id="8_t665s"]
 [ext_resource type="AudioStream" uid="uid://cbauykn8in4hu" path="res://SFX/Dash.wav" id="9_4br8h"]
 [ext_resource type="AudioStream" uid="uid://bfc06bph2hvqj" path="res://SFX/PowerUp.wav" id="9_ykkv2"]
@@ -85,6 +91,7 @@ scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("8_7ct81")]
 position = Vector2(16, 24)
+texture = ExtResource("7_qfqo2")
 
 [node name="Dash" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("9_4br8h")
@@ -92,6 +99,7 @@ volume_db = 10.0
 
 [node name="RedGem2" parent="." node_paths=PackedStringArray("bg", "player") instance=ExtResource("8_t665s")]
 position = Vector2(240, -53)
+<<<<<<< Updated upstream
 bg = NodePath("../Background")
 player = NodePath("../Player")
 
@@ -109,3 +117,12 @@ volume_db = 5.0
 autoplay = true
 
 [connection signal="timeout" from="RedGem2/Timer" to="RedGem2" method="_on_timer_timeout"]
+=======
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("8_fi64s")]
+top_level = true
+light_mask = 0
+position = Vector2(-39, 659)
+scale_v = 0.31
+lvl = 0
+>>>>>>> Stashed changes
