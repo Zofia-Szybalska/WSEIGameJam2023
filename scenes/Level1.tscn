@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=16 format=3 uid="uid://bi5nuow1qr78l"]
-=======
-[gd_scene load_steps=14 format=3 uid="uid://bi5nuow1qr78l"]
->>>>>>> Stashed changes
+[gd_scene load_steps=18 format=3 uid="uid://bi5nuow1qr78l"]
 
 [ext_resource type="TileSet" uid="uid://bdl371v2bcqfg" path="res://Resources/Level1TileSet.tres" id="1_l7i65"]
 [ext_resource type="Texture2D" uid="uid://csk8srrhgjqd7" path="res://Resources/Key.png" id="2_qqkk2"]
@@ -99,7 +95,6 @@ volume_db = 10.0
 
 [node name="RedGem2" parent="." node_paths=PackedStringArray("bg", "player") instance=ExtResource("8_t665s")]
 position = Vector2(240, -53)
-<<<<<<< Updated upstream
 bg = NodePath("../Background")
 player = NodePath("../Player")
 
@@ -116,13 +111,11 @@ stream = ExtResource("8_0hint")
 volume_db = 5.0
 autoplay = true
 
-[connection signal="timeout" from="RedGem2/Timer" to="RedGem2" method="_on_timer_timeout"]
-=======
-
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("8_fi64s")]
 top_level = true
 light_mask = 0
 position = Vector2(-39, 659)
 scale_v = 0.31
 lvl = 0
->>>>>>> Stashed changes
+
+[connection signal="timeout" from="RedGem2/Timer" to="RedGem2" method="_on_timer_timeout"]
