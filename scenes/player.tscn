@@ -1,57 +1,50 @@
-[gd_scene load_steps=11 format=3 uid="uid://bflyhx6op2rkn"]
+[gd_scene load_steps=8 format=3 uid="uid://bflyhx6op2rkn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jsd0q"]
-[ext_resource type="PackedScene" path="res://Objects/player_camera.tscn" id="2_d4mhy"]
-[ext_resource type="Texture2D" uid="uid://dlhuss3e8q1tk" path="res://Resources/character1idle.png" id="3_k0g8b"]
-[ext_resource type="Texture2D" uid="uid://bg0642iprng6a" path="res://Resources/character1walk.png" id="4_it0se"]
-[ext_resource type="Texture2D" uid="uid://c0j5b4qify0g1" path="res://Resources/character1walk_2.png" id="5_a5osa"]
+[ext_resource type="SpriteFrames" uid="uid://3qipticpa55m" path="res://Resources/player_lvl1.tres" id="2_bh0jj"]
+[ext_resource type="PackedScene" uid="uid://cskylch8ncdg3" path="res://Objects/player_camera.tscn" id="2_d4mhy"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfym1"]
-radius = 35.4888
-height = 152.797
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dud7"]
+radius = 28.0
+height = 144.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivwvk"]
-atlas = ExtResource("4_it0se")
-region = Rect2(240, 0, 240, 300)
+[sub_resource type="Animation" id="Animation_ajg7d"]
+resource_name = "Falling"
+loop_mode = 2
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 4.71239]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.667), Vector2(0, 0)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0878"]
-atlas = ExtResource("4_it0se")
-region = Rect2(0, 0, 240, 300)
+[sub_resource type="Animation" id="Animation_y77rr"]
+length = 0.001
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6b2fg"]
-atlas = ExtResource("4_it0se")
-region = Rect2(960, 0, 240, 300)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3wapv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_k0g8b")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ivwvk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s0878")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6b2fg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_a5osa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s0878")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 13.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lj521"]
+_data = {
+"Falling": SubResource("Animation_ajg7d"),
+"RESET": SubResource("Animation_y77rr")
+}
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
@@ -59,27 +52,35 @@ collision_mask = 134
 motion_mode = 1
 platform_wall_layers = 128
 script = ExtResource("1_jsd0q")
+texture = ExtResource("2_bh0jj")
+sprite_scale = Vector2(0.8, 0.667)
 
 [node name="Camera2D" parent="." instance=ExtResource("2_d4mhy")]
 zoom_scale = 0.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.91281, 4.2335)
-shape = SubResource("CapsuleShape2D_gfym1")
+shape = SubResource("CapsuleShape2D_7dud7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 0.667)
-sprite_frames = SubResource("SpriteFrames_3wapv")
-animation = &"walking"
-frame_progress = 0.0896689
+z_index = 5
+position = Vector2(-5.89924, -7.07906)
+scale = Vector2(0.8, 0.667)
+sprite_frames = ExtResource("2_bh0jj")
+animation = &"idle"
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
 [node name="DashTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.1
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_lj521")
+}
 
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
