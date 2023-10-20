@@ -32,4 +32,5 @@ func _on_shot_timer_timeout():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.linear_velocity = direction_vec * bullet_speed
 	bullet_instance.position = $Marker2D.position
+	$Shot.play()
 	add_child(bullet_instance)
