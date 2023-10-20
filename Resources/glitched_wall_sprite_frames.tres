@@ -1,18 +1,18 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://37av0o58fxsm"]
 
-[ext_resource type="Texture2D" uid="uid://xrlq3iepwnay" path="res://Resources/wallGlitch.png" id="1_64q57"]
+[ext_resource type="Texture2D" uid="uid://igv3067o0hcc" path="res://Resources/wallGlitch.png" id="1_64q57"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyt0u"]
 atlas = ExtResource("1_64q57")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_smkyw"]
-atlas = ExtResource("1_64q57")
-region = Rect2(64, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0flo"]
 atlas = ExtResource("1_64q57")
 region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smkyw"]
+atlas = ExtResource("1_64q57")
+region = Rect2(64, 0, 64, 64)
 
 [resource]
 animations = [{
@@ -21,10 +21,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_jyt0u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_smkyw")
+"texture": SubResource("AtlasTexture_l0flo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l0flo")
+"texture": SubResource("AtlasTexture_smkyw")
 }],
 "loop": true,
 "name": &"default",

@@ -17,13 +17,11 @@ shape = SubResource("RectangleShape2D_dsaju")
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_rrdbe")
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprites" index="0"]
-position = Vector2(64, 0)
-sprite_frames = ExtResource("2_ghcch")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprites" index="1"]
+[node name="Sprites@AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprites" index="0"]
 position = Vector2(-64, 0)
 sprite_frames = ExtResource("2_ghcch")
 
-[node name="AnimatedSprite2D" parent="Sprites" index="2"]
+[node name="Sprites@AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprites" index="1"]
+position = Vector2(64, 0)
+scale = Vector2(1, 1)
 sprite_frames = ExtResource("2_ghcch")

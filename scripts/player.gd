@@ -11,6 +11,7 @@ var can_dash: bool = true
 var is_over_abyss: bool = false
 var dash_starting_pos: Vector2
 var dash_dir_vel: Vector2
+var g_wall_area_c = 0
 
 func _ready():
 	$AnimatedSprite2D.sprite_frames = texture
@@ -53,6 +54,7 @@ func dash():
 
 func make_invincible():
 	set_collision_mask_value(3, false)
+	set_collision_mask_value(5, false)
 
 func _on_key_obtained():
 	has_key = true
@@ -63,6 +65,7 @@ func _on_dash_cooldown_timer_timeout():
 func _on_dash_timer_timeout():
 	dashing = false
 	set_collision_mask_value(3, true)
+	set_collision_mask_value(5, true)
 
 func take_damage():
 	speed = 0

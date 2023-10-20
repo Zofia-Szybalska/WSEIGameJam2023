@@ -12,15 +12,22 @@ size = Vector2(134, 70)
 [node name="GlitchedWall" instance=ExtResource("1_6bb81")]
 
 [node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_1gvkb")
+
+[node name="Area2D" parent="." index="1"]
+position = Vector2(32, 0)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_dwvtp")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprites" index="0"]
+[node name="Sprites" parent="." index="2"]
 position = Vector2(32, 0)
+
+[node name="Sprites@AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprites" index="0"]
+position = Vector2(32, 0)
+scale = Vector2(1, 1)
 sprite_frames = ExtResource("2_4cpq7")
 
 [node name="AnimatedSprite2D" parent="Sprites" index="1"]
 position = Vector2(-32, 0)
-sprite_frames = ExtResource("2_4cpq7")

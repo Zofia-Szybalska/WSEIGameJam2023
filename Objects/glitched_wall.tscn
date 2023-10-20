@@ -1,18 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://uvwdotsq0gik"]
+[gd_scene load_steps=3 format=3 uid="uid://uvwdotsq0gik"]
 
 [ext_resource type="Script" path="res://scripts/glitched_wall.gd" id="1_ib5od"]
+[ext_resource type="SpriteFrames" uid="uid://37av0o58fxsm" path="res://Resources/glitched_wall_sprite_frames.tres" id="2_gcd0g"]
 
-[node name="GlitchedWall" type="StaticBody2D"]
+[node name="GlitchedWall" type="StaticBody2D" groups=["glitched_wall"]]
+scale = Vector2(0.25, 0.25)
 collision_layer = 128
 script = ExtResource("1_ib5od")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+disabled = true
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprites"]
+scale = Vector2(1, 1)
+sprite_frames = ExtResource("2_gcd0g")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

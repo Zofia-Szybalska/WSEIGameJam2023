@@ -1,22 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bflyhx6op2rkn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jsd0q"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-
+[ext_resource type="SpriteFrames" uid="uid://b3ewaxqbxmp6q" path="res://Resources/player_lvl1.tres" id="2_bh0jj"]
 [ext_resource type="PackedScene" path="res://Objects/player_camera.tscn" id="2_d4mhy"]
-[ext_resource type="Texture2D" uid="uid://dlhuss3e8q1tk" path="res://Resources/character1idle.png" id="3_k0g8b"]
-[ext_resource type="Texture2D" uid="uid://bg0642iprng6a" path="res://Resources/character1walk.png" id="4_it0se"]
-[ext_resource type="Texture2D" uid="uid://c0j5b4qify0g1" path="res://Resources/character1walk_2.png" id="5_a5osa"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-[ext_resource type="SpriteFrames" uid="uid://3qipticpa55m" path="res://Resources/player_lvl1.tres" id="2_bh0jj"]
-[ext_resource type="PackedScene" uid="uid://cskylch8ncdg3" path="res://Objects/player_camera.tscn" id="2_d4mhy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dud7"]
 radius = 28.0
@@ -62,7 +48,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
-collision_mask = 134
+collision_mask = 150
 motion_mode = 1
 platform_wall_layers = 128
 script = ExtResource("1_jsd0q")
